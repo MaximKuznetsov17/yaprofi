@@ -85,7 +85,7 @@ public class NoteController {
 
     private void createTitle(Note newNote) {
         if (newNote.getTitle().isBlank()) {
-            newNote.setTitle(newNote.getContent().substring(0, titleLength));
+            newNote.setTitle(newNote.getContent().substring(0, Math.min(newNote.getContent().length(), titleLength)));
         }
     }
 
